@@ -33,7 +33,7 @@ def authors_compress():
         headers={"content-type": "application/json"},
     )
     result = r.json() * 50
-    blob = json.dumps(r.json()).encode("utf-8")
+    blob = json.dumps(result).encode("utf-8")
     payload = gzip.compress(blob)
     custom_headers = {"Content-Type": "application/json", "Content-Encoding": "gzip"}
 
